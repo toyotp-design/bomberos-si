@@ -4,13 +4,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>SGF Santa Isabel</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#e63946">
-<link rel="manifest" href="manifest.json">
+<title>SGF - Estación Santa Isabel</title>
 
 </head>
 <body>
+<div class="app-container">
+<nav class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<div class="logo">
+<ion-icon name="flame"></ion-icon>
+<span>SGF-SI</span>
+</div>
+</div>
+<ul class="nav-links">
+<li class="active" onclick="showSection('dashboard')">
+<ion-icon name="home-outline"></ion-icon>
+<span>Inicio</span>
+</li>
+<li onclick="showSection('checklist')">
+<ion-icon name="checkbox-outline"></ion-icon>
+<span>Checklist</span>
+</li>
+<li onclick="showSection('rutas')">
+<ion-icon name="map-outline"></ion-icon>
+<span>Hoja de Ruta</span>
+</li>
+</ul>
+</nav>
 
 </body>
 </html>
