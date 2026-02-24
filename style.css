@@ -1,0 +1,24 @@
+:root { --primary: #e63946; --accent: #ffb703; --bg-dark: #0f172a; --radius: 12px; }
+body { font-family: 'Outfit', sans-serif; margin: 0; background: #f1f5f9; color: #1e293b; overflow: hidden; }
+.app-shell { display: grid; grid-template-columns: 280px 1fr; height: 100vh; }
+.sidebar { background: var(--bg-dark); color: white; padding: 20px; border-right: 4px solid var(--primary); }
+.brand { color: var(--primary); font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+.user-session { background: #1e293b; padding: 12px; border-radius: var(--radius); border: 1px solid #334155; margin-bottom: 10px; }
+.user-session p { font-size: 0.6rem; color: var(--accent); margin: 0 0 5px 0; }
+.user-session input { width: 100%; background: transparent; border: none; color: white; border-bottom: 1px solid #475569; padding: 5px 0; outline: none; font-size: 0.8rem; }
+.menu button { width: 100%; padding: 10px; margin-bottom: 3px; border-radius: 8px; border: none; background: transparent; color: #94a3b8; display: flex; align-items: center; gap: 10px; cursor: pointer; text-align: left; }
+.menu button.active { background: var(--primary); color: white; }
+.main-content { padding: 25px; overflow-y: auto; }
+.card { background: white; padding: 20px; border-radius: var(--radius); box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+table { width: 100%; border-collapse: collapse; }
+td, th { padding: 12px; border-bottom: 1px solid #f1f5f9; font-size: 0.85rem; text-align: left; }
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 100; }
+.modal-card { background: white; width: 90%; max-width: 450px; padding: 20px; border-radius: var(--radius); max-height: 80vh; overflow-y: auto; }
+.btn-main { background: var(--primary); color: white; border: none; padding: 10px 15px; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+.progress-container { width: 100%; background: #e2e8f0; height: 8px; border-radius: 4px; margin-top: 5px; }
+.progress-bar { height: 100%; border-radius: 4px; }
+/* Responsivo para Celular */
+@media (max-width: 768px) {
+    .app-shell { grid-template-columns: 1fr; }
+    .sidebar { display: none; } /* Aquí podrías añadir un menú hamburguesa luego */
+}
