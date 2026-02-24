@@ -1,36 +1,49 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>SGF - Estación Santa Isabel</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGF Santa Isabel</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e63946">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="app-container">
-<nav class="sidebar" id="sidebar">
-<div class="sidebar-header">
-<div class="logo">
-<ion-icon name="flame"></ion-icon>
-<span>SGF-SI</span>
-</div>
-</div>
-<ul class="nav-links">
-<li class="active" onclick="showSection('dashboard')">
-<ion-icon name="home-outline"></ion-icon>
-<span>Inicio</span>
-</li>
-<li onclick="showSection('checklist')">
-<ion-icon name="checkbox-outline"></ion-icon>
-<span>Checklist</span>
-</li>
-<li onclick="showSection('rutas')">
-<ion-icon name="map-outline"></ion-icon>
-<span>Hoja de Ruta</span>
-</li>
-</ul>
-</nav>
-
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand"><ion-icon name="shield-checkmark"></ion-icon><span>SANTA ISABEL</span></div>
+            <div class="user-session">
+                <p>IDENTIFICACIÓN</p>
+                <input type="text" id="resp-name" placeholder="Tu Nombre">
+                <input type="email" id="resp-email" placeholder="Tu Correo">
+            </div>
+            <nav class="menu">
+                <button onclick="nav('inicio')" id="nav-inicio" class="active"><ion-icon name="stats-chart"></ion-icon> Dashboard</button>
+                <button onclick="nav('inventario')" id="nav-inventario"><ion-icon name="clipboard"></ion-icon> Checklist</button>
+                <button onclick="nav('rutas')" id="nav-rutas"><ion-icon name="navigate"></ion-icon> Hoja de Ruta</button>
+                <button onclick="nav('manto')" id="nav-manto"><ion-icon name="build"></ion-icon> Mantenimiento</button>
+                <button onclick="nav('flota')" id="nav-flota"><ion-icon name="bus"></ion-icon> Flota</button>
+                <button onclick="nav('equipos')" id="nav-equipos"><ion-icon name="settings"></ion-icon> Config. Equipos</button>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="top-header">
+                <h2 id="view-title">Dashboard</h2>
+                <div id="live-clock"></div>
+            </header>
+            <div id="viewport"></div>
+        </main>
+    </div>
+    <div id="modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header"><h3 id="modal-title"></h3><button onclick="closeModal()" class="close-btn">&times;</button></div>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
 </html>
